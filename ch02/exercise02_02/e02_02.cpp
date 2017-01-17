@@ -1,10 +1,10 @@
 /*
- * e02_01.cpp
- *
- *  Created on: 17 jan. 2017
- *      Author: kampe_000
+ *  Exercise from book
+ *  C++ Direkt by Jan Skansholm
+ *  http://skansholm.com
  *
  *  Sida 63
+ *
  *  Komplettera programmet i övning 2.1:
  *  +In: bensinförbrukning, som ett reellt tal
  *  +Ut: Bensinförbrukning och liter per mil
