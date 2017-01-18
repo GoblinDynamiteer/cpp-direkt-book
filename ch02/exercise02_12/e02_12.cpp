@@ -13,14 +13,18 @@
  *  Data:
  *  	Tag inte med termer i summan mindre än 10^-5
  *  	sin(x) = x - (x^3/3!) + (x^5/5!) - (x^7/7!)
+ *  	(x är vinkel i radianer om ska testas med miniräknare)
  *  	5! = 5*4*3*2*1 = 120 = 5*4!
+
  */
 
 
 
-/*	 NOT SOLVED	- DIDNT FIX THE MATH	*/
+/*	Takes x as angle in degrees, outputs sin(x)
+ *	Taylor / MacLaurin series works for radians. */
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 
 #define MIN 1.0e-5
@@ -40,36 +44,31 @@ double factor(const double n){
 	for(int i = n; i > 1; i--){
 		calc *= i;
 	}
-	cout << "factorial" << n << " = " << calc << endl;
 	return calc;
 }
 
 
 int main(){
 	double x, inputx, term = 1, sum;
-	cout << "Ange x: ";
+	cout << "Ange grader x: ";
 	cin >> x;
-	inputx = sum = x;
+	/*	 Convert x to radians	*/
+	inputx = x;
+	x = sum = x * M_PI/180;
 	int p = 3;
 	bool posNeg = 0;
 	while(fabs(term) >= MIN){
-		term = powerOf(x, p)/factor(p);
-		cout << "sum: " << sum << endl;
-		cout << "term: " << term << endl;
+		term = powerOf(x, p)/factor((double)p);
 		if(!posNeg){
-			cout << "------" << endl;
 			sum -= term;
-			posNeg = !posNeg;
 		}
 		else{
 			sum += term;
-			posNeg = !posNeg;
-			cout << "+++++" << endl;
 		}
-
+		posNeg = !posNeg;
 		p += 2;
 	}
-	cout << "sin(" << inputx << ") =" << sum;
+	cout << "sin(" << inputx << " deg) = " << fixed << setprecision(4) << sum;
 	return 0;
 }
 
