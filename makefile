@@ -1,14 +1,17 @@
 TARGET = cppd
-LIBS =
+LIBS = lib
 CC = g++
 CFLAGS = -std=gnu++11
-SUBDIR = ch03/exercise03_01
+CHAPTER = 04
+EXERCISE = 01
+SUBDIR = ch$(CHAPTER)/exercise$(CHAPTER)_$(EXERCISE)
 SRC = $(wildcard *.cpp) $(wildcard $(SUBDIR)/*.cpp)
+SRCLIB = $(wildcard $(SUBDIR)/$(LIBS)/*.cpp)
 
 all: clean compile run
 
 compile:
-	$(CC) $(SRC) -o $(TARGET) $(LIBS) $(CFLAGS)
+	$(CC) $(SRC) $(SRCLIB) -o $(TARGET) $(CFLAGS)
 
 clean:
 	-rm -f *.o
