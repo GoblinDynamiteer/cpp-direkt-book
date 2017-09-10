@@ -25,13 +25,7 @@ int main()
 
     while(cin.peek() != '\n')
     {
-        cin >> input;
-
-        /* Skip while next char is space */
-        while (cin.peek() == ' ')
-        {
-            cin.ignore();
-        }
+        cin >> input; // Read until whitespace
 
         cout << "Checking word: " << input;
 
