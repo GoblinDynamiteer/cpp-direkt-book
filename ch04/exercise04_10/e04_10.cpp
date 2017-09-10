@@ -53,6 +53,7 @@ bool valid_var_name(char * name)
 
     for (int i = 0; name[i] != '\0'; i++)
     {
+        /* Valid: A-Z a-z _ 0-9 (unless first char) */
         if(!(   (name[i] >='a' && name[i]<='z') ||
                 (name[i] >='A' && name[i]<='Z') ||
                 (name[i] >='0' && name[i]<='9' && i > 0) ||
