@@ -3,7 +3,7 @@ LIBS = lib
 CC = g++
 CFLAGS = -std=gnu++11
 CHAPTER = 04
-EXERCISE = 11
+EXERCISE = 12
 SUBDIR = ch$(CHAPTER)/exercise$(CHAPTER)_$(EXERCISE)
 SRC = $(wildcard *.cpp) $(wildcard $(SUBDIR)/*.cpp)
 SRCLIB = $(wildcard $(SUBDIR)/$(LIBS)/*.cpp)
