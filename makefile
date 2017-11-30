@@ -1,21 +1,29 @@
-TARGET = cppd
-LIBS = lib
 CC = g++
+LIBS = lib
 CFLAGS = -std=gnu++11
+
 CHAPTER = 04
-EXERCISE = 20
+EXERCISE = 21
+
+SRC_EXT = cpp
+EXECUTABLE = cppd_$(CHAPTER)_$(EXERCISE)
+
 SUBDIR = ch$(CHAPTER)/exercise$(CHAPTER)_$(EXERCISE)
-SRC = $(wildcard *.cpp) $(wildcard $(SUBDIR)/*.cpp)
-SRCLIB = $(wildcard $(SUBDIR)/$(LIBS)/*.cpp)
+SRC = $(wildcard *.$(SRC_EXT)) $(wildcard $(SUBDIR)/*.$(SRC_EXT))
+SRCLIB = $(wildcard $(SUBDIR)/$(LIBS)/*.$(SRC_EXT))
+
+.PHONY: clean_exec
 
 all: clean compile run
 
 compile:
-	$(CC) $(SRC) $(SRCLIB) -o $(TARGET) $(CFLAGS)
+	$(CC) $(SRC) $(SRCLIB) -o $(EXECUTABLE) $(CFLAGS)
 
-clean:
+clean: clean_exec
 	-rm -f *.o
-	-rm -f $(TARGET).*
+
+clean_exec:
+	-rm -f $(EXECUTABLE).exe
 
 run:
-	.\$(TARGET)
+	.\$(EXECUTABLE)

@@ -3,12 +3,14 @@
  *  C++ Direkt by Jan Skansholm
  *  http://skansholm.com
  *
- *  Sida X
+ *  Page XXX - Exercice X:XX
+ *  [EXERCISE DESCRIPTION]
  */
 
 #include <iostream>
 using namespace std;
 
-int main(){
+int main()
+{
 	return 0;
 }
