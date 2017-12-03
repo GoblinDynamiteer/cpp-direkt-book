@@ -3,7 +3,7 @@ LIBS = lib
 CFLAGS = -std=gnu++11
 
 CHAPTER = 05
-EXERCISE = 03
+EXERCISE = 04
 
 SRC_EXT = cpp
 EXECUTABLE = cppd_$(CHAPTER)_$(EXERCISE)
