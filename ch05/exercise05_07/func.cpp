@@ -13,7 +13,22 @@
  *  @return     Bool success
  */
 
+#include <iostream>
+#include "func.h"
+#include <string.h>
+using namespace std;
+
 bool string_copy(char * s1, char * s2, int l)
 {
+    if(strlen(s1) > l)
+    {
+        return false;
+    }
+
+    for(int i = 0; i < l; i++)
+    {
+        s2[i] = s1[i];
+    }
+
     return true;
 }

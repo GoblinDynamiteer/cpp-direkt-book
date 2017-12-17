@@ -22,10 +22,11 @@ int main()
     char string_from[] = "HELLO";
     char string_to[30] = "HI";
 
-    if(string_copy(string_from, string_to, 30))
-    {
-        cout << "HELLO!";
-    }
+    cout << "Before function: " << string_to << endl;
+
+    string_copy(string_from, string_to, 30);
+
+    cout << "After function: " << string_to << endl;
 
     return 0;
 }
