@@ -3,7 +3,7 @@
  *  C++ Direkt by Jan Skansholm
  *  http://skansholm.com
  *
- *  Page 257 - Exercice 7.6
+ *  Page 257 - Exercice 7.1
  *      Create a class: Counter, which counts an integer up or down.
  *      Constructor shall take max and min value of counter, and start value.
  *      If a faulty start value is given, display error message.
