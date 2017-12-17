@@ -1,10 +1,12 @@
 .metadata
+.vscode
 bin/
 tmp/
 Debug/
 Release/
 GCC/
 *.tmp
+*.o
 *.bak
 *.swp
 *~.nib
