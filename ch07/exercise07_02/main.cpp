@@ -19,7 +19,23 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello!";
-    
+    char string[] = "I am a Text!";
+    Text text = Text(string);
+
+    cout << "Text before manipulation: " << endl;
+
+    for(int i = 0; i < text.length(); i++)
+    {
+        cout << text.read_char(i);
+        text.change_char(i, 'A' + i);
+    }
+
+    cout << endl << "Text after manipulation: " << endl;
+
+    for(int i = 0; i < text.length(); i++)
+    {
+        cout << text.read_char(i);
+    }
+
     return 0;
 }

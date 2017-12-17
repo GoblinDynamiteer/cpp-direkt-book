@@ -37,17 +37,39 @@ Text::Text(char *s)
     strcpy(p, s);
 }
 
+/**
+ * Change character in text at index
+ * @param index Index
+ * @param c     New character
+ */
 void Text::change_char(int index, char c)
 {
-    return;
+    if(index <= len && index >= 0)
+    {
+        p[index] = c;
+    }
 }
 
+/**
+ * Return character at index
+ * @param  index Index
+ * @return       Char
+ */
 char Text::read_char(int index)
 {
-    return '0';
+    if(index <= len && index >= 0)
+    {
+        return p[index];
+    }
+
+    return p[0];
 }
 
+/**
+ * Get Text length
+ * @return  Text length
+ */
 int Text::length(void)
 {
-    return 0;
+    return len;
 }
