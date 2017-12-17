@@ -1,8 +1,8 @@
 UNTIY_HOME = unity
 UNITY_SRC = $(UNTIY_HOME)/src
 
-CHAPTER = 05
-EXERCISE = 07
+CHAPTER = 07
+EXERCISE = 01
 SRC_DIR = ch$(CHAPTER)/exercise$(CHAPTER)_$(EXERCISE)
 
 CPP_EXT = cpp
@@ -35,7 +35,7 @@ COMMAND_DELETE = -rm -f
 
 .PHONY: clean_exec
 
-all: clean main run
+all: main run
 
 main: $(OBJ_MAIN)
 	@echo "Building main"
@@ -68,7 +68,7 @@ clean: clean_exec
 #Remove executable
 clean_exec:
 	@echo "Cleaning target"
-	@$(COMMAND_DELETE) *.$(EXE_EXT)
+	@$(COMMAND_DELETE) *.$(APP_EXT)
 
 #Run executable
 run: $(EXECUTABLE)
